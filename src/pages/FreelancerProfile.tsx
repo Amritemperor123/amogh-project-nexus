@@ -15,7 +15,6 @@ const FreelancerProfile = () => {
   // Mock freelancer data (in real app, this would be fetched based on id)
   const freelancerData = {
     'sarah-johnson': {
-      id: 'sarah-johnson',
       name: 'Sarah Johnson',
       expertise: 'AI & Machine Learning',
       university: 'MIT',
@@ -31,7 +30,7 @@ const FreelancerProfile = () => {
       phone: '+1 (555) 123-4567',
       resumeUrl: '#',
       portfolioUrl: '#',
-      projects: [
+      projectList: [
         {
           id: '1',
           title: 'AI-Powered Learning Platform',
@@ -234,7 +233,7 @@ const FreelancerProfile = () => {
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {freelancer.projects.map((project) => (
+                  {freelancer.projectList.map((project) => (
                     <ProjectCard key={project.id} {...project} />
                   ))}
                 </div>

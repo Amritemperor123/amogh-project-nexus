@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Heart, User } from 'lucide-react';
+import { Menu, X, Heart, User, ShoppingCart } from 'lucide-react';
 
 interface NavbarProps {
   user?: {
@@ -25,6 +25,10 @@ const Navbar = ({ user }: NavbarProps) => {
 
   const handleWishlistClick = () => {
     navigate('/wishlist');
+  };
+
+  const handleCartClick = () => {
+    navigate('/cart');
   };
 
   return (
@@ -54,6 +58,15 @@ const Navbar = ({ user }: NavbarProps) => {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={handleCartClick}
+              className="text-amogh-light hover:text-white hover:bg-amogh-ocean"
+            >
+              <ShoppingCart className="h-4 w-4 mr-2" />
+              Cart
+            </Button>
             <Button
               variant="ghost"
               size="sm"
@@ -117,6 +130,15 @@ const Navbar = ({ user }: NavbarProps) => {
               >
                 About Us
               </Link>
+              <button
+                onClick={() => {
+                  handleCartClick();
+                  setIsOpen(false);
+                }}
+                className="block px-3 py-2 text-amogh-light hover:text-white transition-colors w-full text-left"
+              >
+                Cart
+              </button>
               <button
                 onClick={() => {
                   handleWishlistClick();

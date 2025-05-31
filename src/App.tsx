@@ -11,6 +11,7 @@ import ExploreProjects from "./pages/ExploreProjects";
 import ExploreSustainability from "./pages/ExploreSustainability";
 import ProjectDetails from "./pages/ProjectDetails";
 import Wishlist from "./pages/Wishlist";
+import Cart from "./pages/Cart";
 import AboutUs from "./pages/AboutUs";
 import NotFound from "./pages/NotFound";
 
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/sustainability" element={<ExploreSustainability />} />
           <Route path="/project/:id" element={<ProjectDetails />} />
           <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/about" element={<AboutUs />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

@@ -166,20 +166,31 @@ const Index = () => {
             <p className="text-xl text-gray-600">Meet our most talented creators</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             {topFreelancers.map((freelancer, index) => (
-              <Card key={index} className="text-center p-6">
-                <CardContent>
-                  <div className="w-20 h-20 bg-gradient-to-br from-amogh-blue to-amogh-light rounded-full mx-auto mb-4"></div>
-                  <h3 className="text-xl font-semibold text-amogh-navy mb-2">{freelancer.name}</h3>
-                  <p className="text-gray-600 mb-2">{freelancer.expertise}</p>
-                  <div className="flex justify-center space-x-4 text-sm text-gray-500">
-                    <span>{freelancer.projects} Projects</span>
-                    <span>⭐ {freelancer.rating}</span>
-                  </div>
-                </CardContent>
-              </Card>
+              <Link key={index} to="/freelancers">
+                <Card className="text-center p-6 hover:shadow-lg transition-shadow cursor-pointer">
+                  <CardContent>
+                    <div className="w-20 h-20 bg-gradient-to-br from-amogh-blue to-amogh-light rounded-full mx-auto mb-4"></div>
+                    <h3 className="text-xl font-semibold text-amogh-navy mb-2">{freelancer.name}</h3>
+                    <p className="text-gray-600 mb-2">{freelancer.expertise}</p>
+                    <div className="flex justify-center space-x-4 text-sm text-gray-500">
+                      <span>{freelancer.projects} Projects</span>
+                      <span>⭐ {freelancer.rating}</span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
+          </div>
+          
+          <div className="text-center">
+            <Link to="/freelancers">
+              <Button className="bg-amogh-blue hover:bg-amogh-ocean text-white">
+                View All Freelancers
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

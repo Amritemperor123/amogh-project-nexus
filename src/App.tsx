@@ -13,6 +13,8 @@ import ProjectDetails from "./pages/ProjectDetails";
 import Wishlist from "./pages/Wishlist";
 import Cart from "./pages/Cart";
 import AboutUs from "./pages/AboutUs";
+import Freelancers from "./pages/Freelancers";
+import FreelancerProfile from "./pages/FreelancerProfile";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +32,8 @@ const App = () => (
           <Route path="/projects" element={<ExploreProjects />} />
           <Route path="/sustainability" element={<ExploreSustainability />} />
           <Route path="/project/:id" element={<ProjectDetails />} />
+          <Route path="/freelancers" element={<Freelancers />} />
+          <Route path="/freelancer/:id" element={<FreelancerProfile />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/about" element={<AboutUs />} />
